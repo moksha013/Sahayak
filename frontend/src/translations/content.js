@@ -75,6 +75,20 @@ export const UI_STRINGS = {
     noSourcesAvailable: 'Official sources will appear here as you ask questions.',
     sourceAuditNotice: 'All factual answers are strictly grounded in official Government of India portals (.gov.in / authorised statutory providers) audited in October 2026.',
     groundedInOfficialBadge: 'Grounded in Official Sources',
+    // Document Translator strings (FEATURE)
+    docTranslatorTitle: 'Government Document Translator',
+    docTranslatorDesc: 'Upload a government document and get a simple translation & explanation in your preferred language.',
+    uploadPrompt: 'Drag & drop a PDF or image here, or click to select a file.',
+    fileTypeError: 'Unsupported file type. Please upload PDF, JPG, JPEG, or PNG.',
+    sizeError: 'File is too large. Maximum allowed size is 5 MiB.',
+    translateBtn: 'Translate & Explain',
+    processing: 'Processing your document, please wait…',
+    originalTab: 'Original',
+    translationTab: 'Translation',
+    explanationTab: 'Explanation',
+    keyInfoTab: 'Key Information',
+    ocrLowConfidence: 'OCR confidence is low; the extracted text may contain errors. Please verify the original.',
+    uploadFailed: 'Upload failed. Please try again.',
 
     // Centre Finder Strings (FEATURE 2)
     centreFinderNavBtn: 'Find Centres',

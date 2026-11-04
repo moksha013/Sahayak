@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SourcesPanel from '../components/SourcesPanel';
+import FeatureCards from '../components/FeatureCards';
 import CentreFinder from '../components/CentreFinder';
 
 export default function Explore({ language }) {
@@ -16,7 +17,13 @@ export default function Explore({ language }) {
       })
       .then((data) => {
         // Prefer specific source lists; fall back to generic 'sources' array if present
-        const srcList = data.panCardSources || data.sources || [];
+        // Combine all official source lists: PAN, Ayushman, and boundary sources
+        const srcList = [];
+        if (Array.isArray(data.panCardSources)) srcList.push(...data.panCardSources);
+        if (Array.isArray(data.ayushmanSources)) srcList.push(...data.ayushmanSources);
+        if (Array.isArray(data.boundarySources)) srcList.push(...data.boundarySources);
+        // Fallback to generic 'sources' array if no specific lists are present
+        if (srcList.length === 0 && Array.isArray(data.sources)) srcList.push(...data.sources);
         setSources(srcList);
       })
       .catch((err) => setError(err.message))
